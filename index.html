@@ -4,27 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Quicksand:wght@300..700&display=swap');
     *{
-        margin: 0;
-        padding: 0;
         font-family: 'Quicksand', sans-serif;
     }
     </style>
     <title>Grocery Store</title>
 </head>
 <body>
-    <nav class="flex justify-between items-center px-6 py-2">
+    <nav class="flex justify-between items-center px-6 py-2 md:px-20">
+        <!-- nav kiri -->
         <div class="logo">
-            <img src="image/Logo.png" alt="">
+            <img class="md:block hidden" src="image/Logo.png" alt="">
+            <img class="md:hidden block" src="image/logo-2.png" alt="">
         </div>
-        <div>
-            <form action="">
-                <input type="text" name="" placeholder="Search.......">
-                <button>Search</button>
-            </form>
+        <!-- nav kanan -->
+        <div class=" flex item-center space-x-8">
+            <form action="" class="w-[450px] hidden md:flex">
+                <input
+                  class="flex-grow border border-gray-200 bg-gray-100 
+                  rounded-l-md px-3 py-2 text-sm text-gray-400 
+                  placeholder-gray-400 focus:outline-none focus:ring-2 
+                  focus:ring-green-500 focus:border-green-500"
+                  placeholder="Search"
+                />
+                <button class="bg-[#3BB77E] flex items-center 
+                rounded-r-md px-3 py-2 justify-center">
+                  <i data-lucide="search" class="w-5 text-white"></i>
+                </button>
+              </form>
+                <i data-lucide="search" class="w-5 text-white md:hidden block text-gray-400"></i>
+            <div class="flex items-center space-x-4 md:space-x-8">
+                <a class="flex items-center space-x-2" href="">
+                    <i data-lucide="heart" class=""></i>
+                    <span class="hidden md:block">Whislist</span>
+                </a>
+                <a class="flex items-center space-x-2" href="">
+                    <i data-lucide="shopping-cart" class=""></i>
+                    <span class="hidden md:block">My Cart</span>
+                </a>
+                <img src="image/profile.png" alt="" class="w-8">
+            </div>
         </div>
     </nav>
+
+    <div class="flex items-center space-x-8 bg-white px-20">
+        <a class="bg-[#3BB77E] text-white px-4 py-2 flex item-center  w-auto  " href="">
+            <i data-lucide="layout-dashboard" class="w-5"></i>
+            <span>Brows All Categories</span>
+        </a>
+        <a class="bg-white text-[#3BB77E]  space-x-2 px-6 py-2 flex item-center  w-auto  " href="">
+            <i data-lucide="home" class="w-5"></i>
+            <span>Home</span>
+        </a>
+        <a class="bg-white text-black px-4 py-2  space-x-2 flex item-center  w-auto  " href="">
+            <i data-lucide="flame" class="w-5"></i>
+            <span>Hot Deals</span>
+        </a>
+        <a class="bg-white text-black  space-x-2 px-4 py-2 flex item-center  w-auto  " href="">
+            <i data-lucide="percent" class="w-5"></i>
+            <span>Promotion</span>
+        </a>
+        <a class="bg-white text-black space-x-2 px-4 py-2 flex item-center  w-auto  " href="">
+            <i data-lucide="megaphone" class="w-5"></i>
+            <span>New Products</span>
+        </a>
+    </div>
+
+
+    <script>lucide.createIcons();</script>
 </body>
 </html>
